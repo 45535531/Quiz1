@@ -1,0 +1,62 @@
+1.
+
+curl –s https://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-10-shell-programming--triplet-stop.sh
+
+#!/bin/bash
+# save as triplet-stop.sh
+# splits a sequence into triplets
+x=0
+while [ -n "${1:$x:3}" ]; do
+  seq=$seq${1:$x:3}" "
+  x=$(expr $x + 3)
+  if [ ${1:$x:3} == 'taa'] && [ $x -gt 9 ]; then
+    break
+  fi
+done
+echo "$seq"
+
+./triplet-stop.sh aaataaragrtetaatga
+
+
+2.
+
+scp -i 45535531.pem tutes.txt ubuntu@ec2-13-239-12-50.ap- southeast2.compute.amazonaws.com:
+
+cat tutes.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c
+
+
+3.a.
+
+scp -i 45535531.pem 3a.txt ubuntu@ec2-13-239-12-50.ap- southeast2.compute.amazonaws.com:
+
+ssh -i 45535531.pem ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com
+
+egrep '[^ ]+ [^ ]+[^ ]' 3a.txt
+
+
+3.b.
+
+scp -i 45535531.pem 3b.txt ubuntu@ec2-13-239-12-50.ap- southeast2.compute.amazonaws.com:
+
+ssh -i 45535531.pem ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com
+
+egrep -e '\-[0-9]+' 3b.txt
+
+
+3.c.
+
+scp -i 45535531.pem 3c.txt ubuntu@ec2-13-239-12-50.ap- southeast2.compute.amazonaws.com:
+
+ssh -i 45535531.pem ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com
+
+egrep -e '\.[0-9]+' 3c.txt
+
+
+3.d.
+
+scp -i 45535531.pem 3d.txt ubuntu@ec2-13-239-12-50.ap- southeast2.compute.amazonaws.com:
+
+ssh -i 45535531.pem ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com
+
+egrep ' hydrogenase' 3d.txt | egrep -v 'dehydrogenase'
+
