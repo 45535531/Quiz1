@@ -1,0 +1,25 @@
+Exercises:
+curl –s http://www.staff.hs-mittweida.de/~wuenschi/data/media/compbiolbook/chapter-11-regex--structure.pdb 
+OR
+scp -i 45535531.pem structure.pdb ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com:
+ssh -i 45535531.pem ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com
+sed 's/Beisel/Weisel/' structure.pdb
+sed '1,3d' structure.pdb
+sed -n '5,10p' structure.pdb
+sed '/MET/d' structure.pdb
+sed -n '/HELIX.*ILE/p' structure.pdb
+sed '/^H/s/$/***/' structure.pdb
+sed '/SEQRES/s/^.*$/SEQ/' structure.pdb
+scp -i 45535531.pem jabberwocky.txt ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com:
+sed '/^\s*$/d' jabberwocky.txt   or   sed '/^$/d' jabberwocky.txt
+
+Examples:
+scp -i 45535531.pem example.txt ubuntu@ec2-13-239-12-50.ap-southeast-2.compute.amazonaws.com:
+sed 's/Tom/Dom/' example.txt
+sed '1,3d' example.txt
+sed -n '5,10p' example.txt
+sed '/amazing/d' example.txt
+sed -n '/Tell.*time/p' example.txt
+sed '/^H/s/$/***/' example.txt
+sed '/amazing/s/^.*$/incredible/' example.txt
+sed '/^\s*$/d' example.txt   or   sed '/^$/d' example.txt 
