@@ -1,0 +1,46 @@
+1.
+twain=open("C:/Users/HP LAPTOP/Desktop/twain.txt").read()
+result1=twain.replace("Huck","HucK")
+print(result1)
+
+
+3.
+def leapyear(yr):
+	if yr % 4 == 0 and yr % 100 != 0 or yr % 400 == 0:
+		return("It is a leap year")
+	else:
+		return("It is not a leap year")
+
+
+4.
+import random
+def integers(a,b):
+	a=int(a)
+	b=int(b)
+	x=random.randint(a,b)
+	print(x)
+
+
+5.
+def date(day,month):
+	d=int(day)
+	m=int(month)
+	d1=(3,20)
+	d2=(6,20)
+	day=(m,d)
+	if d1<day<d2:
+		print("True")
+	else:
+		print("False")
+
+
+6.
+import math
+def parameters(Principal,rate,time):
+	P=float(Principal)
+	r=float(rate)
+	t=float(time)
+	x=r*t
+	rt=math.exp(x)
+	value=P*rt
+	print(value)
