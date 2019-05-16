@@ -1,0 +1,45 @@
+import pandas as pd
+from pandas import DataFrame
+
+Data = {'Country': ['Output, Q','Labour, L','Capital, K'],
+        'B': [80,60,50],
+	'C': [150,100,100],
+	'D': [135,100,80],
+	'E': [165,120,100],
+	'F': [95,70,60],
+	'G': [130,90,80],
+	'H': [110,80,70],
+        }
+
+Table = DataFrame(Data,columns= ['Country','B','C','D','E','F','G','H'])
+print (Table)
+
+Table.mean(axis=1)
+Table.var(axis=1)
+Table.std(axis=1)
+Table.median(axis=1)
+
+import matplotlib.pyplot as plt
+Q=[80,150,135,165,95,130,110]
+plt.hist(Q,bins=22)
+L=[60,100,100,120,70,90,80]
+plt.hist(L,bins=15)
+
+import numpy as np
+K=[50,100,80,100,60,80,70]
+logQ=np.log(Q)
+logL=np.log(L)
+logK=np.log(K)
+
+import statsmodels.api as sm
+
+
+
+import seaborn as sns
+
+
+
+
+
+
+
